@@ -7,13 +7,26 @@
     <script>
         function isWebView() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            var standalone = window.navigator.standalone;
+            var isReactNative = typeof window.ReactNativeWebView !== "undefined";
+            var isAndroidWebView = typeof window.AndroidBridge !== "undefined";
+            var isIOSWebView = typeof window.webkit !== "undefined";
+            var isGeneralWebView = /FBAN|FBAV|Instagram|Twitter|WhatsApp|WebView|wv/i.test(userAgent);
+            
             console.log("User Agent:", userAgent);
-            return (/FBAN|FBAV|Instagram|Twitter|WhatsApp|WebView|wv/i.test(userAgent));
+            console.log("Standalone:", standalone);
+            console.log("ReactNative WebView:", isReactNative);
+            console.log("Android WebView:", isAndroidWebView);
+            console.log("iOS WebView:", isIOSWebView);
+            console.log("General WebView Check:", isGeneralWebView);
+            
+            return standalone || isReactNative || isAndroidWebView || isIOSWebView || isGeneralWebView;
         }
         
         window.onload = function() {
             if (!isWebView()) {
-                document.body.innerHTML = `
+                document.documentElement.innerHTML = `
+                <!DOCTYPE html>
                 <html>
                   <head>
                     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
