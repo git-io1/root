@@ -7,13 +7,13 @@
     <script>
         function isWebView() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            return (/FBAN|FBAV|Instagram|Twitter|WhatsApp|WebView/i.test(userAgent));
+            console.log("User Agent:", userAgent);
+            return (/FBAN|FBAV|Instagram|Twitter|WhatsApp|WebView|wv/i.test(userAgent));
         }
         
         window.onload = function() {
             if (!isWebView()) {
-                document.write(`
-                <!DOCTYPE html>
+                document.body.innerHTML = `
                 <html>
                   <head>
                     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -46,8 +46,9 @@
                       </div>
                     </div>
                   </body>
-                </html>
-                `);
+                </html>`;
+            } else {
+                console.log("WebView detected, loading store links...");
             }
         };
     </script>
