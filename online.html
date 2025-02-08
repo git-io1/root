@@ -4,16 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ورود به فروشگاه</title>
-    <script>
-        function isWebView() {
-            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            return (/FBAN|FBAV|Instagram|Twitter|WhatsApp|WebView/i.test(userAgent));
-        }
-        
-        if (!isWebView()) {
-            document.location.href = 'webview-error.html';
-        }
-    </script>
     <style>
         body {
             background-color: #ffffff;
@@ -28,28 +18,28 @@
         }
         .container {
             background: #f9f9f9;
-            padding: 80px;
-            border-radius: 25px;
-            box-shadow: 0 0 35px rgba(0, 0, 0, 0.2);
-            width: 80%;
-            max-width: 750px;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            width: 75%;
+            max-width: 700px;
         }
         h1 {
             color: #000;
-            font-size: 28px;
-            margin-bottom: 35px;
+            font-size: 26px;
+            margin-bottom: 30px;
             font-weight: bold;
         }
         .link {
             display: block;
-            margin: 25px 0;
-            padding: 22px;
+            margin: 20px 0;
+            padding: 20px;
             background: linear-gradient(45deg, #000, #444);
             color: #FFD700;
             text-decoration: none;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
-            border-radius: 15px;
+            border-radius: 12px;
             transition: all 0.3s;
         }
         .link:hover {
